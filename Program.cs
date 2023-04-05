@@ -75,7 +75,7 @@ namespace POKE_6
 
                                                     try
                                                     {
-                                                        pr.insert(NIM, NmaMhs, almt, tanggallahir, jk, notlpn,idpesanan, conn);
+                                                        pr.insert(NIM, NmaMhs, almt, tanggallahir, jk, notlpn, idpesanan, conn);
                                                     }
                                                     catch
                                                     {
@@ -94,14 +94,31 @@ namespace POKE_6
                                                     Console.WriteLine("\n Invalid Option");
                                                 }
                                                 break;
-
                                         }
+                                    }
+                                    catch
+                                    {
+                                        Console.WriteLine("\n Check for the value entered");
+                                    }
                                 }
                             }
+                        default:
+                            {
+                                Console.WriteLine("\n Invalid Option");
+                            }
+                            break;
                     }
+                }
+                catch
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Tidak Dapat mengakses Database Menggunakan User Tersebut\n");
+                    Console.ResetColor();
                 }
             }
         }
+
 
     }
 
