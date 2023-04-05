@@ -22,6 +22,16 @@ namespace POKE_6
                     string db = Console.ReadLine();
                     Console.Write("\n Ketik K untuk tergubung ke database: ");
                     char chr = Convert.ToChar(Console.ReadLine());
+                    switch (chr)
+                    {
+                        case 'K':
+                            {
+                                SqlConnection conn = null;
+                                string strkoneksi = "Data source= LAPTOP-NAUFALAS\\NAUFALAS;"+
+                                     "initial catalog = {0};" +
+                                    "user ID = {1}; password = {2}";
+                            }
+                    }
                 }
             }
         }
