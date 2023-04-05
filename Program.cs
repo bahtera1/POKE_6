@@ -45,6 +45,43 @@ namespace POKE_6
                                         char ch = Convert.ToChar(Console.ReadLine());
                                         switch (ch)
                                         {
+                                            case '1':
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("DATA TIKET KERETA\n");
+                                                    Console.WriteLine();
+                                                    pr.baca(conn);
+                                                    conn.Close();
+                                                }
+                                                break;
+                                            case '2':
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("INPUT DATA PENGGUNA\n");
+                                                    Console.WriteLine("MASUKAN NIK:");
+                                                    string NIM = Console.ReadLine();
+                                                    Console.WriteLine("INPUT NAMA PENGGUNA");
+                                                    string NmaMhs = Console.ReadLine();
+                                                    Console.WriteLine("Masukan Alamat Pengguna : ");
+                                                    string almt = Console.ReadLine();
+                                                    Console.WriteLine("Masukan Jenis Kelamin (L/P):");
+                                                    string jk = Console.ReadLine();
+                                                    Console.WriteLine("Masukan No Telepon : ");
+                                                    string notlpn = Console.ReadLine();
+                                                    Console.WriteLine("Masukan ID Pesanan");
+                                                    string idpesanan = Console.ReadLine();
+
+                                                    try
+                                                    {
+                                                        pr.insert(NIM, NmaMhs, almt, jk, notlpn, conn);
+                                                    }
+                                                    catch
+                                                    {
+                                                        Console.WriteLine("\n Anda tidak memiliki" + "akses untuk menambah data");
+                                                    }
+
+                                                }
+                                                break;
 
                                         }
                                 }
