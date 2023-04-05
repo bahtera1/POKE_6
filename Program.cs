@@ -27,9 +27,27 @@ namespace POKE_6
                         case 'K':
                             {
                                 SqlConnection conn = null;
-                                string strkoneksi = "Data source= LAPTOP-NAUFALAS\\NAUFALAS;"+
+                                string strKoneksi = "Data source= LAPTOP-NAUFALAS\\NAUFALAS;"+
                                      "initial catalog = {0};" +
                                     "user ID = {1}; password = {2}";
+                                conn = new SqlConnection(string.Format(strKoneksi, db, user, pass));
+                                conn.Open();
+                                Console.Clear();
+                                while (true)
+                                {
+                                    try
+                                    {
+                                        Console.WriteLine("\nMenu");
+                                        Console.WriteLine("1. Melihat seluruh data");
+                                        Console.WriteLine("2. Tambah Data");
+                                        Console.WriteLine("3. Keluar");
+                                        Console.WriteLine("\nEnter your choice (1-3) : ");
+                                        char ch = Convert.ToChar(Console.ReadLine());
+                                        switch (ch)
+                                        {
+
+                                        }
+                                }
                             }
                     }
                 }
