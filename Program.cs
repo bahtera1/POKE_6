@@ -64,6 +64,8 @@ namespace POKE_6
                                                     string NmaMhs = Console.ReadLine();
                                                     Console.WriteLine("Masukan Alamat Pengguna : ");
                                                     string almt = Console.ReadLine();
+                                                    Console.WriteLine("Masukan Tanggal Lahir : ");
+                                                    string tanggallahir = Console.ReadLine();
                                                     Console.WriteLine("Masukan Jenis Kelamin (L/P):");
                                                     string jk = Console.ReadLine();
                                                     Console.WriteLine("Masukan No Telepon : ");
@@ -73,13 +75,23 @@ namespace POKE_6
 
                                                     try
                                                     {
-                                                        pr.insert(NIM, NmaMhs, almt, jk, notlpn, conn);
+                                                        pr.insert(NIM, NmaMhs, almt, tanggallahir, jk, notlpn,idpesanan, conn);
                                                     }
                                                     catch
                                                     {
                                                         Console.WriteLine("\n Anda tidak memiliki" + "akses untuk menambah data");
                                                     }
 
+                                                }
+                                                break;
+
+                                            case '3':
+                                                conn.Close();
+                                                return;
+                                            default:
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("\n Invalid Option");
                                                 }
                                                 break;
 
