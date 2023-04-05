@@ -119,6 +119,20 @@ namespace POKE_6
             }
         }
 
+        public void baca(SqlConnection con)
+        {
+            SqlCommand cmd = new SqlCommand("Select * from HRD.Mahasiswa", con);
+            SqlDataReader r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                for (int i = 0; i < r.FieldCount; i++)
+                {
+                    Console.WriteLine(r.GetValue(i));
+                }
+                Console.WriteLine();
+            }
+        }
+
 
     }
 
