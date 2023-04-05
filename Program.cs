@@ -20,11 +20,11 @@ namespace POKE_6
                     string pass = Console.ReadLine();
                     Console.WriteLine("Masukan Database Tujuan:");
                     string db = Console.ReadLine();
-                    Console.Write("\n Ketik K untuk tergubung ke database: ");
+                    Console.Write("\n Ketik A untuk tergubung ke database: ");
                     char chr = Convert.ToChar(Console.ReadLine());
                     switch (chr)
                     {
-                        case 'K':
+                        case 'A':
                             {
                                 SqlConnection conn = null;
                                 string strKoneksi = "Data source= LAPTOP-NAUFALAS\\NAUFALAS;"+
@@ -59,9 +59,9 @@ namespace POKE_6
                                                     Console.Clear();
                                                     Console.WriteLine("INPUT DATA PENGGUNA\n");
                                                     Console.WriteLine("MASUKAN NIK:");
-                                                    string NIM = Console.ReadLine();
+                                                    string NIK = Console.ReadLine();
                                                     Console.WriteLine("INPUT NAMA PENGGUNA");
-                                                    string NmaMhs = Console.ReadLine();
+                                                    string nama = Console.ReadLine();
                                                     Console.WriteLine("Masukan Alamat Pengguna : ");
                                                     string almt = Console.ReadLine();
                                                     Console.WriteLine("Masukan Tanggal Lahir : ");
@@ -73,7 +73,7 @@ namespace POKE_6
 
                                                     try
                                                     {
-                                                        pr.insert(NIM, NmaMhs, almt, tanggallahir, jk, notlpn, conn);
+                                                        pr.insert(NIK, nama, almt, tanggallahir, jk, notlpn, conn);
                                                     }
                                                     catch
                                                     {
@@ -119,7 +119,7 @@ namespace POKE_6
 
         public void baca(SqlConnection con)
         {
-            SqlCommand cmd = new SqlCommand("Select * from HRD.Mahasiswa", con);
+            SqlCommand cmd = new SqlCommand("Select * from pengguna", con);
             SqlDataReader r = cmd.ExecuteReader();
             while (r.Read())
             {
@@ -131,7 +131,7 @@ namespace POKE_6
             }
         }
 
-        public void insert(string NIM, string NmaMhs, string Almt, string jk,string tanggallahir, string notlpn, SqlConnection con)
+        public void insert(string NIK, string nama, string Almt, string jk,string tanggallahir, string notlpn, SqlConnection con)
         {
             string str = "";
             str = "insert into pengguna (nama_pengguna,Alamat_pengguna,Jenis_kelamin,Tanggal_lahir,no_telp,NIK"
@@ -139,8 +139,8 @@ namespace POKE_6
             SqlCommand cmd = new SqlCommand(str, con);
             cmd.CommandType = CommandType.Text;
 
-            cmd.Parameters.Add(new SqlParameter("NIK", NIM));
-            cmd.Parameters.Add(new SqlParameter("nma", NmaMhs));
+            cmd.Parameters.Add(new SqlParameter("NIK", NIK));
+            cmd.Parameters.Add(new SqlParameter("nma", nama));
             cmd.Parameters.Add(new SqlParameter("alamat", Almt));
             cmd.Parameters.Add(new SqlParameter("tanggal lahir", tanggallahir));
             cmd.Parameters.Add(new SqlParameter("JK", jk));
