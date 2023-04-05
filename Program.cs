@@ -70,12 +70,10 @@ namespace POKE_6
                                                     string jk = Console.ReadLine();
                                                     Console.WriteLine("Masukan No Telepon : ");
                                                     string notlpn = Console.ReadLine();
-                                                    Console.WriteLine("Masukan ID Pesanan");
-                                                    string idpesanan = Console.ReadLine();
 
                                                     try
                                                     {
-                                                        pr.insert(NIM, NmaMhs, almt, tanggallahir, jk, notlpn, idpesanan, conn);
+                                                        pr.insert(NIM, NmaMhs, almt, tanggallahir, jk, notlpn, conn);
                                                     }
                                                     catch
                                                     {
@@ -132,6 +130,25 @@ namespace POKE_6
                 Console.WriteLine();
             }
         }
+
+        public void insert(string NIM, string NmaMhs, string Almt, string jk,string tanggallahir, string notlpn, SqlConnection con)
+        {
+            string str = "";
+            str = "insert into pengguna (nama_pengguna,Alamat_pengguna,Jenis_kelamin,Tanggal_lahir,no_telp,NIK"
+                + "values(@nama_pengguna,@Alamat_pengguna,@Jenis_kelamin,@Tanggal_lahir,@no_telp,@NIK";
+            SqlCommand cmd = new SqlCommand(str, con);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add(new SqlParameter("NIK", NIM));
+            cmd.Parameters.Add(new SqlParameter("nma", NmaMhs));
+            cmd.Parameters.Add(new SqlParameter("alamat", Almt));
+            cmd.Parameters.Add(new SqlParameter("tanggal lahir", tanggallahir));
+            cmd.Parameters.Add(new SqlParameter("JK", jk));
+            cmd.Parameters.Add(new SqlParameter("Phn", notlpn));
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data Berhasil Ditambahkan");
+        }
+
 
 
     }
