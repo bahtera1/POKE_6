@@ -112,7 +112,7 @@ namespace POKE_6
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Tidak sDapat ssmengakses Database Menggunakan User Tersebut\n");
-                    Console.WriteLine("Tidak Dapa3t mengakses Dratabase Menggunakan User Tersebut\n");
+                    Console.WriteLine("Tidak Dapa3t mengaksesa Dratabase Menggunakan User Tersebut\n");
                     Console.ResetColor();
                 }
             }
