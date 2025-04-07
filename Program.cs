@@ -112,7 +112,7 @@ namespace POKE_6
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
 
-                    Console.WriteLine("Tidak sDapasaa3tassa  Drata Tersebut\n");
+                    Console.WriteLine("Tidak sDapasaa3tassa  Dratssa Tersebut\n");
                     Console.ResetColor();
                 }
             }
