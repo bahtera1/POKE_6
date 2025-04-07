@@ -111,7 +111,7 @@ namespace POKE_6
                 {
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Tidak sDapat sssssmengaksses saDatxxsasaabase Menggunakan User Tersebut\n");
+                    Console.WriteLine("Tidak sDapat sssssssmengaksses saDatxxsasaabase Menggunakan User Tersebut\n");
                     Console.WriteLine("Tidak sDapa3t ddmengakssssessa Dratabase Menggunakan User Tersebut\n");
                     Console.ResetColor();
                 }
