@@ -8,8 +8,8 @@ namespace POKE_6
     {
         static void Main(string[] args)
         {
-            program pr=new program();
-            while(true)
+            program pr = new program();
+            while (true)
             {
                 try
                 {
@@ -27,7 +27,7 @@ namespace POKE_6
                         case 'A':
                             {
                                 SqlConnection conn = null;
-                                string strKoneksi = "Data source= LAPTOP-NAUFALAS\\NAUFALAS;"+
+                                string strKoneksi = "Data source= LAPTOP-NAUFALAS\\NAUFALAS;" +
                                      "initial catalog = {0};" +
                                     "user ID = {1}; password = {2}";
                                 conn = new SqlConnection(string.Format(strKoneksi, db, user, pass));
@@ -112,6 +112,7 @@ namespace POKE_6
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Tidak Dapat mengakses Database Menggunakan User Tersebut\n");
+                    Console.WriteLine("Tidak Dapat mengakses Database Menggunakan User Tersebut\n");
                     Console.ResetColor();
                 }
             }
@@ -131,7 +132,7 @@ namespace POKE_6
             }
         }
 
-        public void insert(string NIK, string nama, string Almt, string jk,string tanggallahir, string notlpn, SqlConnection con)
+        public void insert(string NIK, string nama, string Almt, string jk, string tanggallahir, string notlpn, SqlConnection con)
         {
             string str = "";
             str = "insert into pengguna (nama_pengguna,Alamat_pengguna,Jenis_kelamin,Tanggal_lahir,no_telp,NIK"
@@ -155,4 +156,3 @@ namespace POKE_6
 
 
 }
- 
