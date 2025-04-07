@@ -112,7 +112,7 @@ namespace POKE_6
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
 
-                    Console.WriteLine("Tidak 29  Dratssa Tersebut\n");
+                    Console.WriteLine("Tidak 2922  Dratssa Tersebut\n");
                     Console.ResetColor();
                 }
             }
